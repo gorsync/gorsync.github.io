@@ -1,18 +1,10 @@
-Gorsync Backup: GTK+ RSYNC frontend
-===================================
-
-[![Build Status](https://travis-ci.org/d2r2/go-rsync.svg?branch=master)](https://travis-ci.org/d2r2/go-rsync)
-[![Go Report Card](https://goreportcard.com/badge/github.com/d2r2/go-rsync)](https://goreportcard.com/report/github.com/d2r2/go-rsync)
-[![GoDoc](https://godoc.org/github.com/d2r2/go-rsync?status.svg)](https://godoc.org/github.com/d2r2/go-rsync)
-[![GPLv3 License](http://img.shields.io/badge/License-GPLv3-yellow.svg)](./LICENSE)
-
 
 About
 ------------
 
-Gorsync Backup is a GTK+ frontend for brilliant [RSYNC](https://download.samba.org/pub/rsync/rsync.html) console utility.  Simple, but powerful. Written completely in [Go programming language](https://golang.org/), provides responsive GUI design and intuitive interface. Might be used as training material how to write rich multi-threaded GUI application with GTK+ in Golang.
+Gorsync Backup is a GTK+ frontend for brilliant [RSYNC](https://download.samba.org/pub/rsync/rsync.html) console utility.  Written completely in [Go programming language](https://golang.org/), provides responsive GUI design and intuitive interface. Might be used as training material how to write rich multi-threaded GUI application with GTK+ in Golang.
 
-Gorsync Backup is not an all-purpose RSYNC wrapper. It was created to keep in mind best approach how to do regular backup of your personal data from home NAS (either small business file server with RSYNC service) with minimal effort. Gorsync Backup doesn't implement user interface for any possible RSYNC option and case, but use all the best from powerful RSYNC utility to perform regular data backup easily and quickly.
+Gorsync Backup is not an all-purpose RSYNC wrapper. It was created to keep in mind how to do regular backup of your personal data from home NAS (either small business file server with RSYNC service enabled) with minimal effort. Gorsync Backup doesn't implement user interface for any possible RSYNC option and case, but use all the best from powerful RSYNC utility to perform regular data backup easily and quickly.
 
 If you not going to pay monthly fee for cloud space to backup your personal data, but instead prefer to buy inexpensive mass-market 2TB-4TB portable external hard drive, than your average backup scheme will looks like: attach USB hard drive to desktop/notebook with Linux OS, start Gorsync Backup application, choose backup profile (once configured), run the backup process and you can go and enjoy your coffee cup.
 
@@ -22,7 +14,7 @@ The application will do the rest: estimate size of data to backup, display exten
 Features and benefits
 ----------------------
 
-* Multiple backup profiles are supported. Moreover, each profile can be configured to get data from multiple RSYNC sources.
+* Multiple backup profiles are supported. Moreover, each profile can be configured to get data from multiple RSYNC sources/modules. Password protected RSYNC modules supported.
 * 2-pass backup session approach to estimated backup volume in 1st pass. Display predicted time of completion in 2nd pass.
 * Demonstrate "deduplication" on modern file systems, once previous backup sessions found (and significant time reduction in repeated backup processes). Works if backup destination is Ext3/Ext4/NTFS (employ file system hardlink feature).
 * [Improved GOTK3+](https://github.com/d2r2/gotk3) library (GTK+ golang bindings) used for GUI.
@@ -33,11 +25,11 @@ Screenshots
 -----------
 Main form:
 
-![image](https://raw.github.com/d2r2/go-rsync/master/docs/gorsync_main_form.png)
+![image](./img/gorsync_main_form.png)
 
 Preferences:
 
-![image](https://raw.github.com/d2r2/go-rsync/master/docs/gorsync_preference_dialog.png)
+![image](./img/gorsync_preference_dialog.png)
 
 
 
@@ -77,8 +69,8 @@ Releases information
 
 ##### [v0.3.2](https://github.com/d2r2/go-rsync/releases/tag/v0.3.1) (latest release):
 
-* RSYNC module authorization supported.
-* Add option to change files permission during RSYNC backup process.
+* Password protected module supported.
+* Option to change files permission during RSYNC backup process.
 * Adaptation to latest GTK+ 3.24, GLIB 2.60.
 * Bugs fixed.
 * Improved documentation and help.
@@ -100,8 +92,7 @@ Plans for next releases
 Short list of preliminary anticipated features for next releases:
 
 * More code comments and improved documentation.
-* Installation packages for all major linux distribution and repositories.
-* Application console parameters. Perhaps some CLI modes.
+* Installation packages for all major linux distributives.
 
 
 
