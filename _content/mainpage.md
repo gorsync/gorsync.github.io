@@ -146,9 +146,9 @@ Remember, that such legacy file systems as FAT, does not support "hard links", b
 Collaboration and contribution
 ------------------------------
 
-If you want to contribute to the project, read next:
+If you want to contribute to [Gorsync Backup](https://github.com/d2r2/go-rsync) project, read next:
 
-* Localization. Any help is appreciated to translate application to local languages. Use file ./data/assets/translate.en.toml as a source for new language translation.
+* Localization required. Any help is appreciated to translate application to local languages. Use ./data/assets/translate.en.toml file as a source for new language translation.
 * Ready to discuss proposals regarding application improvement and further development scenarios.
 
 

@@ -14,10 +14,10 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Gorsync Backup application
+title: Gorsync Backup app
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: GTK3 frontend for brilliant RSYNC utility
 
 mainpage: "_content/mainpage.md"
 
@@ -80,7 +80,7 @@ social-network-links:
   # twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
-#  linkedin: daattali
+  linkedin: "denis-dyakov-9673a716"
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
