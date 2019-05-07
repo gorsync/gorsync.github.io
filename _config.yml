@@ -17,7 +17,7 @@ baseurl: ""
 title: Gorsync Backup app
 
 # Short description of your site
-description: GTK3 frontend for brilliant RSYNC utility
+description: GTK+ frontend for brilliant RSYNC utility
 
 mainpage: "_content/mainpage.md"
 
