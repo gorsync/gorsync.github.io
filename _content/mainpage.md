@@ -128,9 +128,9 @@ $                       ↳ <folder with rsync source #1 content>
 ...
 $                       ↳ <folder with rsync source #N content>
 ```
-, where `~backup_log~.log` file describe all the details about the steps occurred, including info/warning/error messages if any took place. `~backup_nodes~.signatures` file contains hash imprint for all source URLs, to detect in future backup sessions same data source for "deduplication" purpose.
+, where `~backup_log~.log` file describe all the details about the steps occurred, including info/warning/error messages if any took place. `~backup_nodes~.signatures` file contains hash imprint for all source URLs, to detect in future backup sessions same data sets for "deduplication" activation.
 
-Gorsync Backup is splitting backup process to the peaces. Application in every backup session is trying to find optimal data block size to backup at once. To reach this application download folders structure in 1st pass to analyze how to divide the whole process into parts. Ordinary single data block size selected to be not less than 300 MB and no more than 5 GB.
+Gorsync Backup is splitting backup process to the peaces. The application in every backup session is trying to find optimal data block size to backup at once. To reach this application download folders structure in 1st pass to analyze how to divide the whole process into parts. Ordinary single data block size selected to be not less than 300 MB and no more than 5 GB.
 
 
 
