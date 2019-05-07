@@ -69,7 +69,7 @@ Releases information
 
 #### [v0.3.2](https://github.com/d2r2/go-rsync/releases/tag/v0.3.2) (latest release):
 
-* Password protected module supported.
+* Password protected RSYNC module supported.
 * Option to change files permission during RSYNC backup process.
 * Adaptation to latest GTK+ 3.24, GLIB 2.60.
 * First attempt to create project site: [https://gorsync.github.io/](https://gorsync.github.io/) on the base of superior [Beautiful Jekyll](https://deanattali.com/beautiful-jekyll/) template.
