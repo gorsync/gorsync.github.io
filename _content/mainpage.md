@@ -48,18 +48,15 @@ Steps to build and run:
 ```bash
 $ go get -u github.com/d2r2/go-rsync
 ```
-
 * Compile and deploy application GLIB gsettings schema, with console prompt:
 ```bash
 $ cd ./ui/gtkui/
 $ sudo ./gs_schema_install.sh
 ```
-
 * Finally, run app from terminal:
 ```bash
 $ ./gorsync_run.sh
 ```
-
 , either compile application binary:
 ```bash
 $ ./gorsync_build.sh --buildtype Release|Development
@@ -86,7 +83,7 @@ Releases information
 * Lot of small UI improvements.
 * Replace UI animation and customization implemented via imperative programming, with GTK+ CSS declarative application styling.
 * Both Linux and FreeBSD supported.
-* Adaptation to latest GTK+ 3.24, GLIB 2.62.
+* Adaptation to latest GLIB 2.62, GTK+ 3.24.
 * Updated documentation and help.
 * Bugs fixed.
 
@@ -96,7 +93,7 @@ Releases information
 * Password protected RSYNC module supported.
 * Option to change files permission during RSYNC backup process.
 * First attempt to create project site: [https://gorsync.github.io/](https://gorsync.github.io/) on the base of superior [Beautiful Jekyll](https://deanattali.com/beautiful-jekyll/) template.
-* Adaptation to latest GTK+ 3.24, GLIB 2.60.
+* Adaptation to latest GLIB 2.60, GTK+ 3.24.
 * Updated documentation and help.
 * Bugs fixed.
 
@@ -132,28 +129,26 @@ Gorsync Backup might be configured to copy from multiple RSYNC sources. It could
 
 Gorsync Backup never overwrite previous backup session data, but use same common target root path, to put data near by in new folder. For instance, your flash drive backup folder content might looks like:
 ```
-$ <destination root folder to stores backup content>
-$             ↳ ~rsync_backup_20180801-012237~
-$             ↳ ~rsync_backup_20180802-013113~
-$             ↳ ~rsync_backup_<date>-<time>~
+<destination root folder to stores backup content>
+             ↳ ~rsync_backup_20180801-012237~
+             ↳ ~rsync_backup_20180802-013113~
+             ↳ ~rsync_backup_<date>-<time>~
 ...
-$             ↳ ~rsync_backup_20180806-014036~
-$             ↳ ~rsync_backup_(incomplete)_20180807-014024~
+             ↳ ~rsync_backup_20180806-014036~
+             ↳ ~rsync_backup_(incomplete)_20180807-014024~
 ```
-
 , where each specific backup session stored in separate unique folder with date and time in the name. "(incomplete)" phrase stands for backup, that occurs at the moment. When backup is completed, "(incomplete)" will be removed from backup folder name. Another scenario is possible, when backup process has been interrupted for some reason: in this case "(incomplete)" phrase will never get out from folder name. But, in any case it's easy to understand where you have consistent backup results, and where not.
 
 In its turn, each backup folder has next regular structure:
 ```
-$ <destination root folder to stores backup content>
-$             ↳ ~rsync_backup_20180801-012237~
-$                       ↳ ~backup_log~.log
-$                       ↳ ~backup_nodes~.signatures
-$                       ↳ <folder with rsync source #1 content>
+<destination root folder to stores backup content>
+             ↳ ~rsync_backup_20180801-012237~
+                       ↳ ~backup_log~.log
+                       ↳ ~backup_nodes~.signatures
+                       ↳ <folder with rsync source #1 content>
 ...
-$                       ↳ <folder with rsync source #N content>
+                       ↳ <folder with rsync source #N content>
 ```
-
 , where `~backup_log~.log` file describe all the details about the steps occurred, including info/warning/error messages if any took place. `~backup_nodes~.signatures` file contains hash imprint for all source URLs, to detect in future backup sessions same data sets for "deduplication" activation (so, never delete this file from backup history, otherwise "deduplication" will not work for future backup sessions).
 
 Gorsync Backup gives extra flexibility in copying data: you can configure application to skip copying some data from single RSYNC source. For this, you should place empty file in the folder with specific name `!!!__SKIPBACKUP__!!!` (name can be changed in preference), which instruct application not to copy specific folder content (including subfolders).
@@ -179,17 +174,14 @@ Collaboration and contribution
 
 If you want to contribute to the [Gorsync Backup](https://github.com/d2r2/go-rsync) project, please, read:
 
-* User interface translation and localization required. Any help is appreciated to translate application to local languages (so far only English and Russian are supported).
-Use `./data/assets/translate.en.toml` file as an English language source for new language translation. You should modify each section/paragraph value in the file written in [TOML](https://en.wikipedia.org/wiki/TOML) format, for instance:
-```
+* User interface translation and localization required. Any help is appreciated to translate application to local languages (so far only English and Russian are supported). Use `./data/assets/translate.en.toml` file as an English language source for new language translation. You should modify each section/paragraph value in the file written in [TOML](https://en.wikipedia.org/wiki/TOML) format, for instance:
+```toml
 [AboutDlgDoNotShowCaption]
 other = "Do not show this information at application startup"
-
-[PrefDlgProfileNameExistsWarning]
-other = "Profile with name \"{{.ProfileName}}\" already exists. Please, correct the name"
+[PrefDlgPerformDesktopNotificationCaption]
+other = "Show desktop notification on backup completion"
 ```
-
-, to get in the end translated version (do not translate identifiers in double brackets {{...}}). Finally, change "en" suffix in the file name to corresponding language code, and propose translation via project pull request, either mail file directly to denis.dyakov@gmail.com. If you still have any question, please, let me know.
+, to get in the end translated version. Finally, change "en" suffix in the file name to corresponding language code, and propose translation via project pull request, either mail file directly to denis.dyakov@gmail.com. If you still have any question, please, let me know.
 * Ready to discuss proposals regarding application improvement and further development.
 
 
