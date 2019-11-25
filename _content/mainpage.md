@@ -48,15 +48,18 @@ Steps to build and run:
 ```bash
 $ go get -u github.com/d2r2/go-rsync
 ```
+
 * Compile and deploy application GLIB gsettings schema, with console prompt:
 ```bash
 $ cd ./ui/gtkui/
 $ sudo ./gs_schema_install.sh
 ```
+
 * Finally, run app from terminal:
 ```bash
 $ ./gorsync_run.sh
 ```
+
 , either compile application binary:
 ```bash
 $ ./gorsync_build.sh --buildtype Release|Development
@@ -137,6 +140,7 @@ $             ↳ ~rsync_backup_<date>-<time>~
 $             ↳ ~rsync_backup_20180806-014036~
 $             ↳ ~rsync_backup_(incomplete)_20180807-014024~
 ```
+
 , where each specific backup session stored in separate unique folder with date and time in the name. "(incomplete)" phrase stands for backup, that occurs at the moment. When backup is completed, "(incomplete)" will be removed from backup folder name. Another scenario is possible, when backup process has been interrupted for some reason: in this case "(incomplete)" phrase will never get out from folder name. But, in any case it's easy to understand where you have consistent backup results, and where not.
 
 In its turn, each backup folder has next regular structure:
@@ -149,6 +153,7 @@ $                       ↳ <folder with rsync source #1 content>
 ...
 $                       ↳ <folder with rsync source #N content>
 ```
+
 , where `~backup_log~.log` file describe all the details about the steps occurred, including info/warning/error messages if any took place. `~backup_nodes~.signatures` file contains hash imprint for all source URLs, to detect in future backup sessions same data sets for "deduplication" activation (so, never delete this file from backup history, otherwise "deduplication" will not work for future backup sessions).
 
 Gorsync Backup gives extra flexibility in copying data: you can configure application to skip copying some data from single RSYNC source. For this, you should place empty file in the folder with specific name `!!!__SKIPBACKUP__!!!` (name can be changed in preference), which instruct application not to copy specific folder content (including subfolders).
@@ -183,6 +188,7 @@ other = "Do not show this information at application startup"
 [PrefDlgProfileNameExistsWarning]
 other = "Profile with name \"{{.ProfileName}}\" already exists. Please, correct the name"
 ```
+
 , to get in the end translated version (do not translate identifiers in double brackets {{...}}). Finally, change "en" suffix in the file name to corresponding language code, and propose translation via project pull request, either mail file directly to denis.dyakov@gmail.com. If you still have any question, please, let me know.
 * Ready to discuss proposals regarding application improvement and further development.
 
