@@ -13,6 +13,8 @@ Instruction how to upgrade beautiful-jekyll:
     - ./img/tape-icon.xcf
     - ./img/tape-icon-white.xcf
     - ./img/tape-icon-white2.xcf
-3) Empty folder or put your posts there:
+3) Add line to the ./_includes/head.html (after <link rel="alternate"...>):
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+4) Empty folder or put your posts there:
     - ./_posts/
-4) Done.
+5) Done.
