@@ -1,0 +1,18 @@
+Instruction how to upgrade beautiful-jekyll:
+1) Get upstream version of beautiful-jekyll:
+    - git clone https://github.com/daattali/beautiful-jekyll/
+2) Copy from old beautiful-jekyll files to the new one:
+    - ./_config.yml
+    - ./index.md
+    - ./upgrade.txt
+    - ./favicon.ico
+    - ./assets/css/blockquote.css
+    - ./img/gorsync_main_form.png
+    - ./img/gorsync_preference_dialog.png
+    - ./img/tape-icon.png
+    - ./img/tape-icon.xcf
+    - ./img/tape-icon-white.xcf
+    - ./img/tape-icon-white2.xcf
+3) Empty folder or put your posts there:
+    - ./_posts/
+4) Done.
